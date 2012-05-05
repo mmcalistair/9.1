@@ -32,8 +32,10 @@ public class PointList {
 				pointsCalc = true;
 			}
 		}
-		
-
+	}
+	
+	public static void clearPointList(){
+		pList.clear();
 	}
 	
 	// berechnet die folgenen Punkte um die Grafik anzuzeigen

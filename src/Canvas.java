@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.*;
@@ -15,6 +16,7 @@ public class Canvas extends JFrame {
 
 	
 	private DrawPanel dp = new DrawPanel();
+	private JButton buttonReset = new JButton("Reset");
 	
 	
 	public Canvas(){
@@ -30,10 +32,18 @@ public class Canvas extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.addMouseListener(new MyMouseListener());
 		getContentPane().add(dp, BorderLayout.CENTER);
-		getContentPane().add(new JButton("Reset"), BorderLayout.SOUTH);
+		getContentPane().add(buttonReset, BorderLayout.SOUTH);
+		buttonReset.addActionListener(al);
 		this.setVisible(true);
 		
 	}
+	
+	ActionListener al = new ActionListener() {
+		  @Override public void actionPerformed( ActionEvent e ) {
+		    PointList.clearPointList();
+		  }
+		};
+
 	
 	public void my_re(){
 		dp.repaint();
