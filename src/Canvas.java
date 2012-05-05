@@ -41,6 +41,7 @@ public class Canvas extends JFrame {
 	ActionListener al = new ActionListener() {
 		  @Override public void actionPerformed( ActionEvent e ) {
 		    PointList.clearPointList();
+		    PointList.reset();
 		  }
 		};
 
